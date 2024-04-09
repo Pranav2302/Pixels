@@ -24,7 +24,10 @@ export default function PostForm({post}) {
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
             }
-            const dbPost = await appwriteService.updatePost(post.$id,{...data,featuredImage: file ? file.$id :undefined});
+            const dbPost = await appwriteService.updatePost(post.$id,{
+                ...data,
+                featuredImage: file ? file.$id :undefined,
+            });
 
             if(dbPost){
                 navigate(`/post/${dbPost.$id}`);
@@ -35,9 +38,9 @@ export default function PostForm({post}) {
             if(file){
                 const fileId=file.$id;
                 data.featuredImage = fileId
-                const dbPost=await appwriteService.createPost({...data,userId:userData.$id});
+                const dbPost=await appwriteService.createPost({...data, userId: userData.$id });
             if (dbPost){
-                navigate(`/post/${dbPost.$id}`)
+                navigate(`/post/${dbPost.$id}`);
             }
             }
         }
