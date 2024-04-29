@@ -12,12 +12,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        customoffwhite: "#DEF2C8", // Define your custom color
-        customTeagreen: "#C5DAC1", // Define another custom color
+        customoffwhite: "#1e1e1e", // Define your custom color#DEF2C8
+        customTeagreen: "#000000", // Define another custom color  "#C5DAC1"
         customAshgrey: "#BCD0C7",
         customGrey: "#A9B2AC",
-        customDarkgrey:"#898980"
-
+        customDarkgrey: "#898980",
+        lightgrey: "#1e1e1e",
+        offwhite: "#DEF2C8",
+        metalblack: "#111111",
       },
     },
   },

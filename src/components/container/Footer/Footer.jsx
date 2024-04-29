@@ -6,7 +6,15 @@ import Logo from '../../Logo';
 
 function Footer() {
   return (
-    <section className="relative overflow-hidden py-10 bg-customAshgrey border border-t-2 border-t-black">
+    <section
+      className="relative overflow-hidden py-20 bg-metalblack border border-t-2 border-t-black"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        backgroundSize: "100% 100%",
+        backgroundPosition: "center center",
+      }}
+    >
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="-m-6 flex flex-wrap">
           <div className="w-full p-6 md:w-1/2 lg:w-5/12">

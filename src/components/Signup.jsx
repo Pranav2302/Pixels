@@ -35,7 +35,7 @@ function Signup() {
           </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight text-white">
-          Sign up to create account
+          Sign up to create pixels account
         </h2>
         <p className="mt-2 text-center text-base text-white/50">
           Already have an account?&nbsp;

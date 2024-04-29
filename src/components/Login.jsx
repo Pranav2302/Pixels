@@ -28,7 +28,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center w-full">
       <div
-        className={`mx-auto w-full max-w-lg bg-black/80 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
@@ -36,7 +36,7 @@ function Login() {
           </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight text-white">
-          Sign in to your account
+          Sign in to your pixels
         </h2>
         <p className="mt-2 text-center text-base text-white/50">
           Don&apos;t have any account?&nbsp;
@@ -66,7 +66,7 @@ function Login() {
               })}
             />
             <Input
-              label="password"
+              label="Password"
               type="password"
               placeholder="Enter your password"
               {...register("password", {

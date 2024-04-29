@@ -37,7 +37,7 @@ function Header() {
     }
   ];
   return (
-    <header className="py-3 shadow bg-black/80">
+    <header className="py-3 shadow bg-lightgrey">
       <Container>
         <nav className="flex">
           <div className="mr-4">
@@ -45,13 +45,15 @@ function Header() {
               <Logo width="70px" />
             </Link>
           </div>
-          <ul className="flex ml-auto">
+          <ul className="flex ml-auto ">
             {navitems.map((item) =>
               item.active ? (
-                <li key={item.name}>
+                <li key={item.name}
+                className='border-white'
+                >
                   <button
                     onClick={() => navigate(item.slug)}
-                    className="inline-bock px-6 py-2 duration-200 hover:bg-customGrey hover:text-black rounded-full text-customTeagreen"
+                    className="inline-bock px-6 py-2 duration-200 hover:bg-customGrey hover:text-black rounded-full text-white "
                   >
                     {item.name}
                   </button>

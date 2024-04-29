@@ -24,7 +24,7 @@ function App() {
     .finally(()=>setloading(false))  //this will run compulsory , as .then or .catch runs but finally will fix run   
   },[])
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between bg-customTeagreen rounded-3xl">
+    <div className="min-h-screen flex flex-wrap content-between bg-customTeagreen">
       <div className="w-full block">
         <Header />
         <main>
