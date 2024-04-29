@@ -25,9 +25,9 @@ function Signup() {
         }
       };
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center ">
       <div
-        className={`mx-auto w-full max-w-lg bg-black/80 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-lightgrey rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
@@ -78,9 +78,9 @@ function Signup() {
                 required: true,
                 validate: {
                   matchPattern: (val) =>
-                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(val)
-                      
-                    ||
+                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(
+                      val
+                    ) ||
                     "at least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number, Can contain special characters",
                 },
               })}
