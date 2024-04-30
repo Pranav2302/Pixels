@@ -26,11 +26,9 @@ const submit = async (data) => {
         : null;
 
       if (file) {
-        appwriteService.deleteFile(post?.featuredImage); // Added optional chaining here
+        await appwriteService.deleteFile(post.featuredImage);
       }
-
-      const dbPost = await appwriteService.updatePost(post?.$id, {
-        // Added optional chaining here
+      const dbPost = await appwriteService.updatePost(post.$id, {
         ...data,
         featuredImage: file ? file.$id : undefined,
       });
@@ -58,6 +56,7 @@ const submit = async (data) => {
     // Handle error as needed
   }
 };
+
 
 
     const slugTransform = useCallback((value)=>{
@@ -167,3 +166,47 @@ const submit = async (data) => {
     //     }
     //   }
     // };
+
+
+ //   checking 
+
+//  const submit = async (data) => {
+//    try {
+//      if (post) {
+//        const file = data.image?.[0]
+//          ? await appwriteService.uploadFile(data.image[0])
+//          : null;
+
+//        if (file) {
+//          appwriteService.deleteFile(post?.featuredImage); // Added optional chaining here
+//        }
+
+//        const dbPost = await appwriteService.updatePost(post?.$id, {
+//          // Added optional chaining here
+//          ...data,
+//          featuredImage: file ? file.$id : undefined,
+//        });
+
+//        if (dbPost) {
+//          navigate(`/post/${dbPost.$id}`);
+//        }
+//      } else {
+//        const file = await appwriteService.uploadFile(data.image?.[0]);
+
+//        if (file) {
+//          const dbPost = await appwriteService.createPost({
+//            ...data,
+//            featuredImage: file.$id,
+//            userId: userData.$id,
+//          });
+
+//          if (dbPost) {
+//            navigate(`/post/${dbPost.$id}`);
+//          }
+//        }
+//      }
+//    } catch (error) {
+//      console.error("Error submitting form:", error);
+//      // Handle error as needed
+//    }
+//  };
