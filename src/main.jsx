@@ -7,6 +7,7 @@ import store from "./store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import { AuthLayout, Login } from "./components/index.js";
+import { OAuthCallback } from "./components/index.js";  
 
 import AddPost from "./pages/AddPost";
 import Signup from "./pages/Signup";
@@ -16,6 +17,7 @@ import Post from "./pages/Post";
 
 import AllPosts from "./pages/AllPosts";
 
+// Define the routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: (   //authentication is not required here
+        element: (
           <AuthLayout authentication={false}>
             <Signup />
           </AuthLayout>
@@ -43,18 +45,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-posts",
-        element: (  //authemtication is required here
-          <AuthLayout authentication>   
-            {" "}
+        element: (
+          <AuthLayout authentication>
             <AllPosts />
           </AuthLayout>
         ),
       },
       {
         path: "/add-post",
-        element: (   //also write as 
-          <AuthLayout authentication ={true}>
-            {" "}
+        element: (
+          <AuthLayout authentication={true}>
             <AddPost />
           </AuthLayout>
         ),
@@ -63,7 +63,6 @@ const router = createBrowserRouter([
         path: "/edit-post/:slug",
         element: (
           <AuthLayout authentication>
-            {" "}
             <EditPost />
           </AuthLayout>
         ),
@@ -71,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/post/:slug",
         element: <Post />,
+      },
+      {
+        path: "/oauth-callback", // Add this for Oauth
+        element: <OAuthCallback />,
       },
     ],
   },

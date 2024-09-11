@@ -1,6 +1,5 @@
-import conf from "../conf/conf.js"
-
-import { Client, Account, ID } from "appwrite"; 
+import conf from "../conf/conf.js";
+import { Client, Account, ID } from "appwrite";
 
 export class Authservice {
   client = new Client();
@@ -15,7 +14,6 @@ export class Authservice {
   }
 
   async accountRecreation({ email, password, name }) {
-    //destructuring
     try {
       const userAccount = await this.account.create(
         ID.unique(),
@@ -24,8 +22,7 @@ export class Authservice {
         name
       );
       if (userAccount) {
-        //call another function to direct login
-         return this.login({ email, password });
+        return this.login({ email, password });
       } else {
         return userAccount;
       }
@@ -34,38 +31,42 @@ export class Authservice {
     }
   }
 
-  //to login service
   async login({ email, password }) {
     try {
-      return await this.account.createEmailSession(
-        email,
-        password
-      );
-      
+      return await this.account.createEmailSession(email, password);
     } catch (error) {
       throw error;
     }
   }
 
-  //to check user in still login or not
   async getcurrentUser() {
     try {
       return await this.account.get();
-        
     } catch (error) {
       console.log("Appwrite service :: getcurrentUser :: error", error);
     }
     return null;
   }
 
-  async logout(){
+  async logout() {
     try {
-       return await this.account.deleteSessions(); 
+      return await this.account.deleteSessions();
     } catch (error) {
-        console.log("Appwrite service :: logout  :: error", error);
+      console.log("Appwrite service :: logout  :: error", error);
+    }
+  }
+
+  // New method to create session from OAuth key and secret
+  async createOAuthSession(key, secret) {
+    try {
+      const session = await this.account.updateSession(key, secret);
+      return session;
+    } catch (error) {
+      console.error("Appwrite service :: createOAuthSession :: error", error);
+      throw error;
     }
   }
 }
-const authService = new Authservice()  // object is make and is exported and it will called constructor
 
+const authService = new Authservice();
 export default authService;

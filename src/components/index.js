@@ -12,6 +12,7 @@ import AuthLayout from "./Authlayout"
 import Input from "./Input"
 import Select from "./Select"
 import Button from "./Button"
+import OAuthCallback from "./OAuthCallback"
 export {
     Header,
     Footer,
@@ -26,5 +27,6 @@ export {
     AuthLayout,
     Input,
     Select,
-    Button
+    Button,
+    OAuthCallback
 }
