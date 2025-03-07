@@ -34,7 +34,7 @@ Appwrite instance (cloud or self-hosted)
   
 Installation  
 1️⃣ Clone the repository  
-bashCopygit clone https://github.com/yourusername/pixels-blog.git  
+bashCopygit clone [https://github.com/Pranav2302/Pixels.git](https://github.com/Pranav2302/Pixels.git)  
 cd pixels-blog  
 2️⃣ Install dependencies  
 bashCopynpm install  
