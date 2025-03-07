@@ -3,9 +3,8 @@ Pixels - Modern Blogging Platform
   <img src="/public/Logo3.png" alt="Pixels Logo" width="100">
 </p>
 Pixels is a modern, feature-rich blogging platform built with React, Appwrite, and Tailwind CSS. It allows users to create, manage, and explore beautiful content with an intuitive user interface.
-
-
 🌟 Features
+
 User Authentication - Secure sign-up and login functionality
 Content Management - Create, edit, and delete blog posts
 Rich Text Editor - TinyMCE integration for beautiful content creation
@@ -15,6 +14,7 @@ Elegant UI - Modern, clean design with smooth animations
 Image Handling - Upload and manage images for blog posts
 
 🛠️ Technologies Used
+
 Frontend Framework: React.js
 State Management: Redux Toolkit
 Backend/Auth: Appwrite
@@ -40,6 +40,7 @@ Create a .env file in the root directory with your Appwrite credentials
 Run the development server
 
 📋 Appwrite Setup
+
 Create an Appwrite project
 Create a database with the following collections:
 
@@ -68,6 +69,9 @@ Storage permissions:
 
 Read: ["role:all"] (anyone can view images)
 Write: ["role:member"] (only logged-in users can upload)
+
+
+
 
 
 🏗️ Project Structure
