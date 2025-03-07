@@ -1,10 +1,11 @@
-Pixels - Modern Blogging Platform
-A 🌟 modern, feature-rich blogging platform built with React, Appwrite, and Tailwind CSS.
+Pixels - Modern Blogging Platform  
+  
+A 🌟 modern, feature-rich blogging platform built with React, Appwrite, and Tailwind CSS.  
 <p align="center">
   <img src="/public/Logo3.png" alt="Pixels Logo" width="100">
 </p>
-Features
-
+  
+Features  
 🔐 User Authentication - Secure sign-up and login functionality  
 📝 Content Management - Create, edit, and delete blog posts  
 ✨ Rich Text Editor - TinyMCE integration for beautiful content creation  
@@ -12,84 +13,83 @@ Features
 📱 Responsive Design - Fully responsive interface for all devices   
 🎨 Elegant UI - Modern, clean design with smooth animations  
 🖼️ Image Handling - Upload and manage images for blog posts  
-
-Tech Stack
-
-React.js: Frontend Framework
-Redux Toolkit: State Management
-Appwrite: Backend/Auth
-Tailwind CSS: Styling
-Framer Motion: Animations
-React Hook Form: Form Handling
-TinyMCE: Rich Text Editor
-React Router DOM: Routing
-Tabler Icons: Icons
-
-🚀 Getting Started
-Prerequisites
-
-Node.js 16+
-npm or yarn
-Appwrite instance (cloud or self-hosted)
-
-Installation
-1️⃣ Clone the repository
-bashCopygit clone https://github.com/yourusername/pixels-blog.git
-cd pixels-blog
-2️⃣ Install dependencies
-bashCopynpm install
-# or
-yarn install
-3️⃣ Create a .env file in the root directory with your Appwrite credentials
-CopyREACT_APP_APPWRITE_ENDPOINT=your-appwrite-endpoint
-REACT_APP_APPWRITE_PROJECT=your-project-id
-4️⃣ Run the development server
-bashCopynpm start
-# or
-yarn start
-📋 Appwrite Setup
-
+  
+Tech Stack  
+React.js: Frontend Framework  
+Redux Toolkit: State Management  
+Appwrite: Backend/Auth  
+Tailwind CSS: Styling  
+Framer Motion: Animations  
+React Hook Form: Form Handling  
+TinyMCE: Rich Text Editor  
+React Router DOM: Routing  
+Tabler Icons: Icons  
+  
+🚀 Getting Started  
+Prerequisites  
+  
+Node.js 16+  
+npm or yarn  
+Appwrite instance (cloud or self-hosted)  
+  
+Installation  
+1️⃣ Clone the repository  
+bashCopygit clone https://github.com/yourusername/pixels-blog.git  
+cd pixels-blog  
+2️⃣ Install dependencies  
+bashCopynpm install  
+# or  
+yarn install  
+3️⃣ Create a .env file in the root directory with your Appwrite credentials  
+CopyREACT_APP_APPWRITE_ENDPOINT=your-appwrite-endpoint  
+REACT_APP_APPWRITE_PROJECT=your-project-id  
+4️⃣ Run the development server  
+bashCopynpm start  
+# or  
+yarn start  
+📋 Appwrite Setup  
+  
 Create an Appwrite project
-Create a database with the following collections:
-
+Create a database with the following collections:  
+  
 posts - to store blog posts with the following attributes:
+  
+title (string)  
+content (string)  
+featuredImage (string - file ID)  
+status (string - active/inactive)  
+userId (string)  
+  
+  
 
-title (string)
-content (string)
-featuredImage (string - file ID)
-status (string - active/inactive)
-userId (string)
+  
+Create a storage bucket for images  
+Set appropriate permissions:  
+  
+Collection permissions:  
+
+Read: ["role:all"] (anyone can read posts)  
+Create: ["role:member"] (only logged-in users can create)  
+Update/Delete: ["role:member", "document.userId:user.id"] (users can modify their own posts)  
+  
+
+Storage permissions:  
+
+Read: ["role:all"] (anyone can view images)  
+Write: ["role:member"] (only logged-in users can upload)  
+
+  
+  
 
 
+Key Components  
 
-
-Create a storage bucket for images
-Set appropriate permissions:
-
-Collection permissions:
-
-Read: ["role:all"] (anyone can read posts)
-Create: ["role:member"] (only logged-in users can create)
-Update/Delete: ["role:member", "document.userId:user.id"] (users can modify their own posts)
-
-
-Storage permissions:
-
-Read: ["role:all"] (anyone can view images)
-Write: ["role:member"] (only logged-in users can upload)
-
-
-
-
-
-Key Components
-
-🔒 Authentication - User signup, login, and session management
-📖 Post Management - Create, edit, view, and delete posts
-📷 Image Upload - Handle image uploads for post featured images
-📝 Rich Content Editing - TinyMCE integration for formatting content
-🎠 Animated Testimonials - Featured post carousel with elegant animations
-
+🔒 Authentication - User signup, login, and session management  
+📖 Post Management - Create, edit, view, and delete posts  
+📷 Image Upload - Handle image uploads for post featured images  
+📝 Rich Content Editing - TinyMCE integration for formatting content  
+🎠 Animated Testimonials - Featured post carousel with elegant animations  
+  
 Responsive Design
 Pixels is built with a mobile-first approach, ensuring a seamless experience across:
 
