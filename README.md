@@ -5,13 +5,13 @@ A 🌟 modern, feature-rich blogging platform built with React, Appwrite, and Ta
 </p>
 Features
 
-🔐 User Authentication - Secure sign-up and login functionality
-📝 Content Management - Create, edit, and delete blog posts
-✨ Rich Text Editor - TinyMCE integration for beautiful content creation
-🎯 Featured Content - Animated carousel showcasing featured posts
-📱 Responsive Design - Fully responsive interface for all devices
-🎨 Elegant UI - Modern, clean design with smooth animations
-🖼️ Image Handling - Upload and manage images for blog posts
+🔐 User Authentication - Secure sign-up and login functionality  
+📝 Content Management - Create, edit, and delete blog posts  
+✨ Rich Text Editor - TinyMCE integration for beautiful content creation  
+🎯 Featured Content - Animated carousel showcasing featured posts  
+📱 Responsive Design - Fully responsive interface for all devices   
+🎨 Elegant UI - Modern, clean design with smooth animations  
+🖼️ Image Handling - Upload and manage images for blog posts  
 
 Tech Stack
 
