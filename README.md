@@ -1,12 +1,12 @@
 Pixels - Modern Blogging Platform  
   
 A 🌟 modern, feature-rich blogging platform built with React, Appwrite, and Tailwind CSS.  
-<p align="center">
+
   <img src="/pixel-1.png" alt="Home page" width="100">
-</p>
-<p align="center">
+
+
   <img src="/pixel-2.png" alt="Post page page" width="100">
-</p>
+
   
 Features  
 🔐 User Authentication - Secure sign-up and login functionality  
