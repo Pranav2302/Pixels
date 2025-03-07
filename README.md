@@ -89,29 +89,29 @@ Key Components
 📷 Image Upload - Handle image uploads for post featured images  
 📝 Rich Content Editing - TinyMCE integration for formatting content  
 🎠 Animated Testimonials - Featured post carousel with elegant animations  
+    
+Responsive Design  
+Pixels is built with a mobile-first approach, ensuring a seamless experience across:  
   
-Responsive Design
-Pixels is built with a mobile-first approach, ensuring a seamless experience across:
-
-📱 Mobile devices
-💻 Tablets
-🖥️ Desktop computers
-
-Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-Fork the project
-Create your feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments
-
-React
-Appwrite
-Tailwind CSS
-Framer Motion
-TinyMCE
+📱 Mobile devices  
+💻 Tablets  
+🖥️ Desktop computers  
+  
+Contributing  
+Contributions are welcome! Please feel free to submit a Pull Request.  
+  
+Fork the project  
+Create your feature branch (git checkout -b feature/amazing-feature)  
+Commit your changes (git commit -m 'Add some amazing feature')  
+Push to the branch (git push origin feature/amazing-feature)  
+Open a Pull Request  
+  
+License  
+This project is licensed under the MIT License - see the LICENSE file for details.  
+Acknowledgments  
+  
+React  
+Appwrite  
+Tailwind CSS  
+Framer Motion  
+TinyMCE  
