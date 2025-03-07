@@ -2,153 +2,101 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Logo from '../../Logo';
 
-
-
 function Footer() {
   return (
-    <section
-      className="relative overflow-hidden py-20 bg-lightgrey border border-t-2 border-t-black"
-      // style={{
-      //   backgroundImage:
-      //     "url('https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-      //   backgroundSize: "100% 100%",
-      //   backgroundPosition: "center center",
-      // }}
-    >
+    <footer className="bg-background border-t border-border py-12">
       <div className="relative z-10 mx-auto max-w-7xl px-4">
-        <div className="-m-6 flex flex-wrap">
-          <div className="w-full p-6 md:w-1/2 lg:w-5/12">
-            <div className="flex h-full flex-col justify-between">
-              <div className="mb-4 inline-flex items-center">
-                <Logo width="100px" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Logo and Copyright */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex flex-col h-full justify-between">
+              <div className="flex items-center space-x-2 mb-6">
+                <Logo width="40px" />
+                <span className="text-xl font-bold text-textPrimary">Pixels</span>
               </div>
-              <div>
-                <p className="text-sm text-white">
-                  &copy; Copyright 2024. All Rights Reserved by Pixels.
-                </p>
-              </div>
+              <p className="text-sm text-textSecondary">
+                Capture and share your moments with the world.
+              </p>
+              <p className="text-xs text-textSecondary mt-6">
+                &copy; {new Date().getFullYear()} Pixels. All Rights Reserved.
+              </p>
             </div>
           </div>
-          <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-            <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-white">
-                Company
-              </h3>
-              <ul>
-                <li className="mb-4">
+          
+          {/* Company Links */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+              Company
+            </h3>
+            <ul className="space-y-2">
+              {['About Us', 'Features', 'Pricing', 'Press Kit'].map((item) => (
+                <li key={item}>
                   <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
+                    className="text-textSecondary hover:text-primary transition-colors"
                     to="/"
                   >
-                    Features
+                    {item}
                   </Link>
                 </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Affiliate Program
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Press Kit
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
-          <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-            <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-white">
-                Support
-              </h3>
-              <ul>
-                <li className="mb-4">
+          
+          {/* Support Links */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+              Support
+            </h3>
+            <ul className="space-y-2">
+              {['Help Center', 'Community', 'Contact Us', 'Cookie Policy'].map((item) => (
+                <li key={item}>
                   <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
+                    className="text-textSecondary hover:text-primary transition-colors"
                     to="/"
                   >
-                    Account
+                    {item}
                   </Link>
                 </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Help
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Customer Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
-          <div className="w-full p-6 md:w-1/2 lg:w-3/12">
-            <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-white">
-                Legals
-              </h3>
-              <ul>
-                <li className="mb-4">
+          
+          {/* Legal Links */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
+              Legal
+            </h3>
+            <ul className="space-y-2">
+              {['Terms of Service', 'Privacy Policy', 'Licenses'].map((item) => (
+                <li key={item}>
                   <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
+                    className="text-textSecondary hover:text-primary transition-colors"
                     to="/"
                   >
-                    Terms &amp; Conditions
+                    {item}
                   </Link>
                 </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className=" text-base font-medium text-offwhite hover:text-gray-700"
-                    to="/"
-                  >
-                    Licensing
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
+        
+        {/* Social Media Icons */}
+        <div className="mt-12 pt-6 border-t border-border">
+          {/* <div className="flex justify-center space-x-6">
+            {['Twitter', 'Instagram', 'GitHub', 'LinkedIn'].map((social) => (
+              <a key={social} href="#" className="text-textSecondary hover:text-primary">
+                <span className="sr-only">{social}</span>
+                <div className="h-6 w-6 rounded-full bg-card flex items-center justify-center">
+                  {social.charAt(0)}
+                </div>
+              </a>
+            ))}
+          </div> */}
+        </div>
       </div>
-    </section>
+    </footer>
   );
 }
-
 
 export default Footer

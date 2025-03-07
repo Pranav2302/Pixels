@@ -1,91 +1,120 @@
 import React from 'react'
-import  {Link,useNavigate} from "react-router-dom"
-import {login as storeLogin} from "../authslice"
-import {Button,Input,Logo} from "./index"
+import { Link, useNavigate } from "react-router-dom"
+import { login as storeLogin } from "../authslice"
+import { Button, Input, Logo } from "./index"
 import { useDispatch } from 'react-redux'
 import authService from '../appwrite/auth'
-import {useForm} from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { useState } from 'react'
 
 function Login() {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-    const {register,handleSubmit}=useForm()
-    const [error,setError] = useState("")
-    const login=async (data) =>{
-        setError("")
-        try {
-          const session = await authService.login(data)
-          if (session) {
-            const userData=await authService.getcurrentUser()
-            if(userData) dispatch(storeLogin(userData))
-            navigate("/")
-        }
-        } catch (error) {
-            setError(error.message)
-        }
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { register, handleSubmit, formState: { errors } } = useForm()
+  const [error, setError] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const login = async (data) => {
+    setError("")
+    setIsSubmitting(true)
+    try {
+      const session = await authService.login(data)
+      if (session) {
+        const userData = await authService.getcurrentUser()
+        if (userData) dispatch(storeLogin(userData))
+        navigate("/")
+      }
+    } catch (error) {
+      setError(error.message)
+    } finally {
+      setIsSubmitting(false)
     }
+  }
+
   return (
-    <div className="flex items-center justify-center w-full">
-      <div
-        className={`mx-auto w-full max-w-lg rounded-xl p-10 bg-lightgrey border-black/10`}
-      >
-        <div className="mb-2 flex justify-center">
-          <span className="inline-block w-full max-w-[100px]">
-            <Logo width="100%" />
-          </span>
+    <div className="min-h-[80vh] flex items-center justify-center">
+      <div className="w-full max-w-md bg-card p-8 rounded-2xl shadow-card">
+        <div className="text-center mb-8">
+          <div className="inline-flex justify-center mb-4">
+            <Logo width="70px" />
+          </div>
+          <h2 className="text-3xl font-bold text-textPrimary mb-2">Welcome back</h2>
+          <p className="text-textSecondary">
+            Enter your credentials to access your account
+          </p>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight text-white">
-          Sign in to your pixels
-        </h2>
-        <p className="mt-2 text-center text-base text-white/50">
-          Don&apos;t have any account?&nbsp;
-          <Link
-            to="/signup"
-            className="font-medium text-primary transition-all duration-200 hover:underline"
-          >
-            Sign Up
-          </Link>
-        </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(login)} className="mt-8">
-          {/* handlesubmit is from useForm , it is a key word ,and we have to given a method which is use to login*/}
-          <div className="space-y-5">
+
+        {error && (
+          <div className="mb-4 p-4 bg-danger/10 border border-danger/20 rounded-lg">
+            <p className="text-danger text-center text-sm">{error}</p>
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit(login)} className="space-y-6">
+          <div>
+            <label className="text-sm font-medium text-textPrimary block mb-2">
+              Email
+            </label>
             <Input
-              label="Email: "
-              placeholder="Enter the Email"
+              placeholder="name@example.com"
               type="email"
+              className={`${errors.email ? 'border-danger focus:border-danger' : 'border-border'}`}
               {...register("email", {
-                //imp - to not overwrite the values we use (...) register  and to give name "email" is unique .this is key value
-                required: true,
+                required: "Email is required",
                 validate: {
                   matchPattern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                    "Email address must be a valid address",
+                    "Please enter a valid email address",
                 },
               })}
             />
-            <Input
-              label="Password"
-              type="password"
-              placeholder="Enter your password"
-              {...register("password", {
-                required: true,
-                validate: {
-                  //this is regex use for validation the format
-                  matchPattern: (val) =>
-                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(
-                      val
-                    ) ||
-                    "at least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number, Can contain special characters",
-                },
-              })}
-            />
-            <Button type="submit" className="w-full">
-              Sign In
-            </Button>
+            {errors.email && (
+              <p className="mt-1 text-sm text-danger">{errors.email.message}</p>
+            )}
           </div>
+
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-sm font-medium text-textPrimary">
+                Password
+              </label>
+              <Link to="/" className="text-xs text-primary hover:underline">
+                Forgot password?
+              </Link>
+            </div>
+            <Input
+              type="password"
+              placeholder="••••••••"
+              className={`${errors.password ? 'border-danger focus:border-danger' : 'border-border'}`}
+              {...register("password", {
+                required: "Password is required",
+              })}
+            />
+            {errors.password && (
+              <p className="mt-1 text-sm text-danger">{errors.password.message}</p>
+            )}
+          </div>
+
+          <Button 
+            type="submit" 
+            className="w-full bg-primary hover:bg-primary/90 py-3 text-white font-medium"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Signing in..." : "Sign in"}
+          </Button>
         </form>
+
+        <div className="mt-6 text-center">
+          <p className="text-sm text-textSecondary">
+            Don't have an account?{" "}
+            <Link
+              to="/signup"
+              className="text-primary font-medium hover:underline"
+            >
+              Create an account
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

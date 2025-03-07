@@ -9,14 +9,15 @@ function Logoutbtn() {
       dispatch(logout());
     });
   };
+   
   return (
     <button
-      className="inline-bock px-6 py-2 duration-200 hover:bg-blue-100 hover:text-black rounded-full text-white"
+      className="px-4 py-2 rounded-full bg-card text-textPrimary font-medium transition-all duration-200 hover:bg-primary/10"
       onClick={logoutHandler}
     >
       Logout
     </button>
-  );
+  )
 }
 
 export default Logoutbtn;
