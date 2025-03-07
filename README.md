@@ -3,8 +3,10 @@ Pixels - Modern Blogging Platform
   <img src="/public/Logo3.png" alt="Pixels Logo" width="100">
 </p>
 Pixels is a modern, feature-rich blogging platform built with React, Appwrite, and Tailwind CSS. It allows users to create, manage, and explore beautiful content with an intuitive user interface.
-🌟 Features
 
+
+
+🌟 Features
 User Authentication - Secure sign-up and login functionality
 Content Management - Create, edit, and delete blog posts
 Rich Text Editor - TinyMCE integration for beautiful content creation
@@ -13,8 +15,9 @@ Responsive Design - Fully responsive interface for all devices
 Elegant UI - Modern, clean design with smooth animations
 Image Handling - Upload and manage images for blog posts
 
-🛠️ Technologies Used
 
+
+🛠️ Technologies Used
 Frontend Framework: React.js
 State Management: Redux Toolkit
 Backend/Auth: Appwrite
@@ -25,12 +28,18 @@ Rich Text Editor: TinyMCE
 Routing: React Router DOM
 Icons: Tabler Icons
 
+
+
+
 🚀 Getting Started
 Prerequisites
 
 Node.js 16+
 npm or yarn
 Appwrite instance (cloud or self-hosted)
+
+
+
 
 Installation
 
@@ -39,8 +48,9 @@ Install dependencies
 Create a .env file in the root directory with your Appwrite credentials
 Run the development server
 
-📋 Appwrite Setup
 
+
+📋 Appwrite Setup
 Create an Appwrite project
 Create a database with the following collections:
 
@@ -51,6 +61,8 @@ content (string)
 featuredImage (string - file ID)
 status (string - active/inactive)
 userId (string)
+
+
 
 
 
@@ -90,6 +102,8 @@ Mobile devices
 Tablets
 Desktop computers
 
+
+
 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -98,6 +112,8 @@ Create your feature branch (git checkout -b feature/amazing-feature)
 Commit your changes (git commit -m 'Add some amazing feature')
 Push to the branch (git push origin feature/amazing-feature)
 Open a Pull Request
+
+
 
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
